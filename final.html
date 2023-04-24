@@ -7,7 +7,27 @@
   <title>US Drone Strikes</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   
+<<<<<<< Updated upstream
 </body>
+=======
+  <div id = "frequency-chart"> 
+    <script>
+    fetchData('http://api.dronestre.am/data')
+    .then(data => {
+      //from script.js
+      createFrequencyGraph(data);
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error)
+    });
+  </script>
+  </div>
+  
+<script src="./script.js"></script>
+<script src ="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+>>>>>>> Stashed changes
 </html>
