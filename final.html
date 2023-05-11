@@ -1,33 +1,68 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>US Drone Strikes</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UMD Building Map</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
 
-<body>
-  
-<<<<<<< Updated upstream
-</body>
-=======
-  <div id = "frequency-chart"> 
-    <script>
-    fetchData('http://api.dronestre.am/data')
-    .then(data => {
-      //from script.js
-      createFrequencyGraph(data);
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error)
-    });
-  </script>
-  </div>
-  
-<script src="./script.js"></script>
-<script src ="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
 
->>>>>>> Stashed changes
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+  </head>
+  <body>
+      <div class="top">
+        <header class="header">
+          <h1>Terrapin Map</h1>
+          
+
+
+
+          <a href="https://umterps.com/"><img id="logo" src="21a0540424124f443e5f3104983fdafe.jpeg" alt="UMD logo">
+        </header>
+        <div class="page">
+          <a href="https://github.com/EthanMeyer41/INST377_Final" class="link">Github Final Repository</a>
+          
+        </div>
+      </div>
+      <div class="api">
+        <form action="https://api.umd.io/v1/map/buildings" class="main_form">
+        <label for="build">Search for your buidling according to name, or use to filter box below</label>
+        <div class="meat">
+          <input type="text" id="build" name="build"/>
+          <button type="button" id="filter">Filter</button>
+        </div>
+        <div class="option">
+          <select id="type" name="type">
+            <option value="">All types</option>
+            <option value="residence">Residence Buidlings</option>
+            <option value="dining">Dining Halls</option>
+            <option value="library">Library</option>
+            <option value="sports">Sports Complex</option>
+            <option value="parking">Parking Lots</option>
+          </select>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="right_section box">
+          <ol id="building_list">
+            Filtered Results:
+          </ol>
+        </div>
+        
+        <div class="left_section box">
+          
+          <div id="map" class="box"></div>
+          
+        </div>
+      
+      </div>
+    </div> 
+    <script src="script.js"></script>
+  </body>
 </html>
